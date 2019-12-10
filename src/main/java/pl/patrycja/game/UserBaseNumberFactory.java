@@ -7,13 +7,23 @@ import java.util.Scanner;
 
 public class UserBaseNumberFactory {
 
-    BaseNumber getFormat(Scanner scanner){
-        if (scanner.hasNextDouble()) {
-            return new UserDoubleNumber(Double.parseDouble(String.valueOf(scanner.nextDouble())));
-        } else if (scanner.hasNextInt()) {
-            return new UserIntegerNumber(Integer.parseInt(String.valueOf(scanner.nextDouble())));
+    //TODO: add others format
+    BaseNumber getFormat(Scanner scanner) {
+        Number number = changeToNumber(scanner);
+
+        if (number instanceof Double) {
+            return new UserDoubleNumber(number.doubleValue());
+        } else if (number instanceof Integer) {
+            return new UserIntegerNumber(number.intValue());
         }
         return null;
-        //TODO: add other format
+    }
+
+    private Number changeToNumber(Scanner scanner) {
+        String input;
+        do {
+            input = scanner.nextLine();
+        } while (CorrectInputData.checkCorrectData(input) == null);
+        return CorrectInputData.checkCorrectData(input);
     }
 }

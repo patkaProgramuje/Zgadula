@@ -1,14 +1,16 @@
 package pl.patrycja.game;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+
 public class CorrectInputData {
 
-    public static boolean checkCorrectData(String number) {
+    public static Number checkCorrectData(String number) {
         try {
-            Integer.parseInt(String.valueOf(number));
-            return true;
-        } catch (IllegalArgumentException e) {
-            System.out.println("Podano zły argument.");
-            return false;
+            return NumberFormat.getInstance().parse(number);
+        } catch (ParseException e) {
+            System.out.println("Niewłaściwy format danych. Podaj liczbę.");
+            return null;
         }
     }
 }
