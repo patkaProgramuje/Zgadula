@@ -1,6 +1,7 @@
 package pl.patrycja.game;
 
 import pl.patrycja.game.doubleValues.DoubleRange;
+import pl.patrycja.game.integerValues.IntegerRange;
 
 public class Main {
 

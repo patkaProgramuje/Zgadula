@@ -20,7 +20,7 @@ public class Game {
 
     //TODO: calculate amount of tries
 
-    private boolean identify(BaseNumber randomDoubleNumber, BaseNumber userDoubleNumber) {
+    boolean identify(BaseNumber randomDoubleNumber, BaseNumber userDoubleNumber) {
 
         int compare = randomDoubleNumber.compareTo(userDoubleNumber);
 

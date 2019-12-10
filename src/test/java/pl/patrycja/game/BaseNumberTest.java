@@ -46,10 +46,19 @@ public class BaseNumberTest {
         int comparisonResult = doubleNumberOne.compareTo(doubleNumberSecond);
         assertEquals(-1, comparisonResult);
     }
+
     @Test
     public void testCompareIfFirstIntegerNumberIsGraterThanSecond() {
         BaseNumber doubleNumberOne = new IntegerNumber(5);
         BaseNumber doubleNumberSecond = new IntegerNumber(1);
+        int comparisonResult = doubleNumberOne.compareTo(doubleNumberSecond);
+        assertEquals(1, comparisonResult);
+    }
+
+    @Test
+    public void testCompareIfNumbersHaveDifferentClass() {
+        BaseNumber doubleNumberOne = new IntegerNumber(5);
+        BaseNumber doubleNumberSecond = new DoubleNumber(1.0);
         int comparisonResult = doubleNumberOne.compareTo(doubleNumberSecond);
         assertEquals(1, comparisonResult);
     }
