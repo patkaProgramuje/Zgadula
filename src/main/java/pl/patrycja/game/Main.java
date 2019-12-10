@@ -1,11 +1,11 @@
 package pl.patrycja.game;
 
-import pl.patrycja.game.integerValues.IntegerRange;
+import pl.patrycja.game.doubleValues.DoubleRange;
 
 public class Main {
 
     public static void main(String[] args) {
-        Range range = new IntegerRange(30, 36);
+        Range range = new DoubleRange(1.0, 10.0);
         System.out.println("Hello in my magic game. Guess the number between " + range + ". Enjoy!");
         Game game = new Game(range);
         game.play();
