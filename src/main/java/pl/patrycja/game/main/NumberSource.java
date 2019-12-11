@@ -6,12 +6,11 @@ import pl.patrycja.game.integerValues.IntegerNumber;
 
 import java.util.Scanner;
 
-public class UI {
+public class NumberSource {
 
     public static BaseNumber getNumberFromUser() {
         System.out.println("Enter number: ");
-        Scanner scanner = new Scanner(System.in);
-        return getNumber(scanner);
+        return getNumber(new Scanner(System.in));
     }
 
     private static BaseNumber getNumber(Scanner scanner){

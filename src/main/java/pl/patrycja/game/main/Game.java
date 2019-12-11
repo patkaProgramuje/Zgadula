@@ -16,7 +16,7 @@ public class Game {
         BaseNumber userNumber;
         System.out.println(randomBaseNumber);
         do {
-            userNumber = UI.getNumberFromUser();
+            userNumber = NumberSource.getNumberFromUser();
         } while (!identify(randomBaseNumber, userNumber)); //TODO: check if amount od tries
     }
 
