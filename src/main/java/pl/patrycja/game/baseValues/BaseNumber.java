@@ -1,4 +1,4 @@
-package pl.patrycja.game;
+package pl.patrycja.game.baseValues;
 
 public abstract class BaseNumber extends Number implements Comparable<Number> {
 

@@ -1,12 +1,10 @@
 package pl.patrycja.game.doubleValues;
 
-
-import pl.patrycja.game.Range;
+import pl.patrycja.game.baseValues.BaseRange;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-
-public class DoubleRange implements Range {
+public class DoubleRange extends BaseRange {
 
     Double min;
     Double max;
@@ -17,13 +15,13 @@ public class DoubleRange implements Range {
     }
 
     @Override
-    public RandomDoubleNumber drawRangeNumber() {
+    public DoubleNumber drawRangeNumber() {
         double doubleNumber = ThreadLocalRandom.current().nextDouble(min, max);
-        return new RandomDoubleNumber(doubleNumber);
+        return new DoubleNumber(doubleNumber);
     }
 
     @Override
     public String toString() {
-        return min + " - " + max;
+        return toString(min.toString(), max.toString());
     }
 }
