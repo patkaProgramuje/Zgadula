@@ -14,19 +14,16 @@ public class Game {
     public void play() {
         BaseNumber randomBaseNumber = range.drawRangeNumber();
         BaseNumber userNumber;
-        System.out.println(randomBaseNumber);
         do {
             userNumber = NumberSource.getNumberFromUser();
-        } while (!identify(randomBaseNumber, userNumber)); //TODO: check if amount od tries
+        } while (!areEqual(randomBaseNumber, userNumber)); //TODO: check if amount od tries
     }
 
     //TODO: calculate amount of tries
 
-    private boolean identify(BaseNumber randomDoubleNumber, BaseNumber userDoubleNumber) {
+    private boolean areEqual(BaseNumber randomDoubleNumber, BaseNumber userDoubleNumber) {
 
-        int compare = randomDoubleNumber.compareTo(userDoubleNumber);
-
-        switch (compare) {
+        switch (randomDoubleNumber.compareTo(userDoubleNumber)) {
             case -1:
                 System.out.println("Number is too high");
                 return false;
