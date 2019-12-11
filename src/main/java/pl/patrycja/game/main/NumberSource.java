@@ -6,9 +6,9 @@ import pl.patrycja.game.integerValues.IntegerNumber;
 
 import java.util.Scanner;
 
-public class NumberSource {
+class NumberSource {
 
-    public static BaseNumber getNumberFromUser() {
+    static BaseNumber getNumberFromUser() {
         System.out.print("Enter number: ");
         return getNumber(new Scanner(System.in));
     }

@@ -1,35 +1,34 @@
 package pl.patrycja.game.main;
 
-import jdk.swing.interop.SwingInterOpUtils;
 import pl.patrycja.game.baseValues.BaseNumber;
 import pl.patrycja.game.baseValues.BaseRange;
 
 import static pl.patrycja.game.main.ComparisonResult.*;
 
-public class Game {
+class Game {
 
     private BaseRange range;
 
-    public Game(BaseRange range) {
+    Game(BaseRange range) {
         this.range = range;
     }
 
-    public void play() {
+    void play() {
         BaseNumber correctNumber = range.drawRangeNumber();
-        BaseNumber userNumber;
+        BaseNumber userGuess;
         ComparisonResult result;
         do {
-            userNumber = NumberSource.getNumberFromUser();
-            result = compare(correctNumber, userNumber);
+            userGuess = NumberSource.getNumberFromUser();
+            result = compareNumbers(correctNumber, userGuess);
             System.out.println(result);
         } while (result != Correct); //TODO: check if amount od tries
     }
 
     //TODO: calculate amount of tries
 
-    private ComparisonResult compare(BaseNumber randomDoubleNumber, BaseNumber userDoubleNumber) {
+    private ComparisonResult compareNumbers(BaseNumber userNumber, BaseNumber userGuess) {
 
-        switch (randomDoubleNumber.compareTo(userDoubleNumber)) {
+        switch (userNumber.compareTo(userGuess)) {
             case -1:
                 return TooHigh;
             case 0:
