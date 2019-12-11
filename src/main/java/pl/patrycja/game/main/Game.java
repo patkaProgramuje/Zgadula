@@ -1,11 +1,13 @@
-package pl.patrycja.game;
+package pl.patrycja.game.main;
 
+import pl.patrycja.game.baseValues.BaseNumber;
+import pl.patrycja.game.baseValues.BaseRange;
 
 public class Game {
 
-    private Range range;
+    private BaseRange range;
 
-    public Game(Range range) {
+    public Game(BaseRange range) {
         this.range = range;
     }
 
