@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class NumberSource {
 
     public static BaseNumber getNumberFromUser() {
-        System.out.println("Enter number: ");
+        System.out.print("Enter number: ");
         return getNumber(new Scanner(System.in));
     }
 

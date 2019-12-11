@@ -2,7 +2,6 @@ package pl.patrycja.game.main;
 
 import pl.patrycja.game.baseValues.BaseRange;
 import pl.patrycja.game.integerValues.IntegerRange;
-import pl.patrycja.game.main.Game;
 
 public class Main {
 

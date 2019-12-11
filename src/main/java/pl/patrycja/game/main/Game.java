@@ -1,7 +1,10 @@
 package pl.patrycja.game.main;
 
+import jdk.swing.interop.SwingInterOpUtils;
 import pl.patrycja.game.baseValues.BaseNumber;
 import pl.patrycja.game.baseValues.BaseRange;
+
+import static pl.patrycja.game.main.ComparisonResult.*;
 
 public class Game {
 
@@ -12,27 +15,27 @@ public class Game {
     }
 
     public void play() {
-        BaseNumber randomBaseNumber = range.drawRangeNumber();
+        BaseNumber correctNumber = range.drawRangeNumber();
         BaseNumber userNumber;
+        ComparisonResult result;
         do {
             userNumber = NumberSource.getNumberFromUser();
-        } while (!areEqual(randomBaseNumber, userNumber)); //TODO: check if amount od tries
+            result = compare(correctNumber, userNumber);
+            System.out.println(result);
+        } while (result != Correct); //TODO: check if amount od tries
     }
 
     //TODO: calculate amount of tries
 
-    private boolean areEqual(BaseNumber randomDoubleNumber, BaseNumber userDoubleNumber) {
+    private ComparisonResult compare(BaseNumber randomDoubleNumber, BaseNumber userDoubleNumber) {
 
         switch (randomDoubleNumber.compareTo(userDoubleNumber)) {
             case -1:
-                System.out.println("Number is too high");
-                return false;
+                return TooHigh;
             case 0:
-                System.out.println("Correct! That’s the number");
-                return true;
+                return Correct;
             default:
-                System.out.println("Number is too low");
-                return false;
+                return TooLow;
         }
     }
 }
