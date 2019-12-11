@@ -11,15 +11,14 @@ public class Game {
 
     public void play() {
         BaseNumber randomBaseNumber = range.drawRangeNumber();
-        BaseNumber userNumber;
         System.out.println(randomBaseNumber);
+        BaseNumber userNumber;
         do {
             userNumber = UI.getNumberFromUser();
-        } while (!identify(randomBaseNumber, userNumber)); //TODO: check if amount od tries
+        } while (!identify(randomBaseNumber, userNumber)); //TODO: check amount od tries
     }
 
     //TODO: calculate amount of tries
-
     boolean identify(BaseNumber randomDoubleNumber, BaseNumber userDoubleNumber) {
 
         int compare = randomDoubleNumber.compareTo(userDoubleNumber);

@@ -10,7 +10,7 @@ public class UI {
         Scanner scanner = new Scanner(System.in);
         BaseNumberFactory baseNumberFactory = new BaseNumberFactory();
         Optional<BaseNumber> optionalBaseNumber = baseNumberFactory.create(scanner.next());
-        while (!optionalBaseNumber.isPresent()) {
+        while (optionalBaseNumber.isEmpty()) {
             System.out.println("Unknown format. Please reenter.");
             String input = scanner.next();
             optionalBaseNumber = baseNumberFactory.create(input);
