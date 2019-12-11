@@ -26,13 +26,13 @@ public class Game {
 
         switch (compare) {
             case -1:
-                System.out.println("Your number is to high.");
+                System.out.println("Number is too high");
                 return false;
             case 0:
-                System.out.println("Winner");
+                System.out.println("Correct! That’s the number");
                 return true;
             default:
-                System.out.println("to small");
+                System.out.println("Number is too low");
                 return false;
         }
     }
