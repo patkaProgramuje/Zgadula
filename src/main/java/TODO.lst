@@ -1,1 +1,5 @@
 1. BaseNumber class and it's subclasses: a lot of test code duplicated. Think of some solutions
+2. BaseNumber implementations are very similar to one another (they only differ in "value" type)
+- is there better solution (less code duplication)?
+3. Similar situation with BaseRange and its implementations. Both tests and code in subclasses
+contain a lot of duplicated statements - we should look for better solution

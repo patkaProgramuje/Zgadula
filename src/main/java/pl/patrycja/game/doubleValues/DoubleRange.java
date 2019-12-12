@@ -10,14 +10,23 @@ public class DoubleRange extends BaseRange {
     Double max;
 
     public DoubleRange(Double min, Double max) {
-        this.min = min;
-        this.max = max;
+        if (min < max) {
+            this.min = min;
+            this.max = max;
+        } else {
+            this.min = max;
+            this.max = min;
+        }
     }
 
     @Override
     public DoubleNumber drawRangeNumber() {
-        double doubleNumber = ThreadLocalRandom.current().nextDouble(min, max);
-        return new DoubleNumber(doubleNumber);
+        if (min.equals(max)) {
+            return new DoubleNumber(min);
+        } else {
+            double doubleNumber = ThreadLocalRandom.current().nextDouble(min, max);
+            return new DoubleNumber(doubleNumber);
+        }
     }
 
     @Override

@@ -10,14 +10,23 @@ public class IntegerRange extends BaseRange {
     Integer max;
 
     public IntegerRange(Integer min, Integer max) {
-        this.min = min;
-        this.max = max;
+        if (min < max) {
+            this.min = min;
+            this.max = max;
+        } else {
+            this.min = max;
+            this.max = min;
+        }
     }
 
     @Override
     public IntegerNumber drawRangeNumber() {
-        int integerNumber = ThreadLocalRandom.current().nextInt(min, max);
-        return new IntegerNumber(integerNumber);
+        if (min.equals(max)) {
+            return new IntegerNumber(min);
+        } else {
+            int integerNumber = ThreadLocalRandom.current().nextInt(min, max);
+            return new IntegerNumber(integerNumber);
+        }
     }
 
     @Override

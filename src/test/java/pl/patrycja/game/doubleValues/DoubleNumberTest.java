@@ -22,6 +22,12 @@ public class DoubleNumberTest {
         assertEquals(number.compare(o1, o2), result);
     }
 
+    @Test(dataProvider = "forTestCompare")
+    public void testCompareTo(Number o1, Number o2, int result) {
+        DoubleNumber number = new DoubleNumber(o1.doubleValue());
+        assertEquals(number.compareTo(o2), result);
+    }
+
     @DataProvider
     public static Object[][] forTestToString() {
         return new Object[][] {

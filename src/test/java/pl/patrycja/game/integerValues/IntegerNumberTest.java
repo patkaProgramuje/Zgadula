@@ -23,6 +23,12 @@ public class IntegerNumberTest {
         assertEquals(number.compare(o1, o2), result);
     }
 
+    @Test(dataProvider = "forTestCompare")
+    public void testCompareTo(Number o1, Number o2, int result) {
+        IntegerNumber number = new IntegerNumber(o1.intValue());
+        assertEquals(number.compareTo(o2), result);
+    }
+
     @DataProvider
     public static Object[][] forTestToString() {
         return new Object[][] {
