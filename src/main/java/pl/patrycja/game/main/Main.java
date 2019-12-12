@@ -14,7 +14,7 @@ public class Main {
         playTheGame(range.drawRangeNumber());
     }
 
-    static void playTheGame(BaseNumber correctNumber) {
+    private static void playTheGame(BaseNumber correctNumber) {
         BaseNumber userGuess;
         ComparisonResult result;
         do {

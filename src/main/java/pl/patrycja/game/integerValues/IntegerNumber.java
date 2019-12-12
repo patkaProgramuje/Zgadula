@@ -15,6 +15,6 @@ public class IntegerNumber extends BaseNumber {
 
     @Override
     public String toString() {
-        return String.valueOf(intValue());
+        return String.valueOf(super.intValue());
     }
 }

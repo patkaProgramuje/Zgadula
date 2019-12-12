@@ -3,7 +3,7 @@ package pl.patrycja.game.main;
 enum ComparisonResult {
     TooLow(-1), TooHigh(1), Correct(0);
 
-    int result;
+    private final int result;
 
     ComparisonResult(int result) {
         this.result = result;

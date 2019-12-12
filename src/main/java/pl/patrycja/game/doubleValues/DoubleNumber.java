@@ -15,6 +15,6 @@ public class DoubleNumber extends BaseNumber {
 
     @Override
     public String toString() {
-        return String.valueOf(doubleValue());
+        return String.valueOf(super.doubleValue());
     }
 }
