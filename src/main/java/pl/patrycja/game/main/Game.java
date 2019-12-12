@@ -19,22 +19,11 @@ class Game {
         ComparisonResult result;
         do {
             userGuess = NumberSource.getNumberFromUser();
-            result = compareNumbers(correctNumber, userGuess);
-            System.out.println(result);
+            result = ComparisonResult.of(userGuess.compareTo(correctNumber));
+            System.out.println(result.message());
         } while (result != Correct); //TODO: check if amount od tries
     }
 
     //TODO: calculate amount of tries
 
-    private ComparisonResult compareNumbers(BaseNumber userNumber, BaseNumber userGuess) {
-
-        switch (userNumber.compareTo(userGuess)) {
-            case -1:
-                return TooHigh;
-            case 0:
-                return Correct;
-            default:
-                return TooLow;
-        }
-    }
 }

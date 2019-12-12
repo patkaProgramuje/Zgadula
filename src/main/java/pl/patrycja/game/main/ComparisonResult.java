@@ -1,16 +1,28 @@
 package pl.patrycja.game.main;
 
 enum ComparisonResult {
-    TooLow("Number is too low"), TooHigh("Number is too high"), Correct("Correct! That’s the number");
+    TooLow(-1), TooHigh(1), Correct(0);
 
-    String message;
+    int result;
 
-    ComparisonResult(String message) {
-        this.message = message;
+    ComparisonResult(int result) {
+        this.result = result;
     }
 
-    @Override
-    public String toString() {
-        return message;
+    static ComparisonResult of(int result) {
+        if (result < 0) return TooLow;
+        if (result > 0) return TooHigh;
+        return Correct;
+    }
+
+    String message() {
+        switch (of(result)) {
+            case TooLow:
+                return "Number is too low";
+            case TooHigh:
+                return "Number is too high";
+            default:
+                return "Correct! That’s the number";
+            }
     }
 }

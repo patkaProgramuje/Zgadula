@@ -1,3 +1,4 @@
+DUPLICATED CODE
 1. BaseNumber class and it's subclasses: a lot of test code duplicated. Think of some solutions
 2. BaseNumber implementations are very similar to one another (they only differ in "value" type)
 - is there better solution (less code duplication)?
