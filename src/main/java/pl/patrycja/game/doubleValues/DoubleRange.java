@@ -10,13 +10,8 @@ public class DoubleRange extends BaseRange {
     Double max;
 
     public DoubleRange(Double min, Double max) {
-        if (min < max) {
-            this.min = min;
-            this.max = max;
-        } else {
-            this.min = max;
-            this.max = min;
-        }
+        this.min = Math.min(min, max);
+        this.max = Math.max(min, max);
     }
 
     @Override
